@@ -16,7 +16,7 @@ const ProductCard = ({ meal }) => {
       </h1>
       <div className="flex gap-2 justify-center items-center">
         <p className="mb-2 flex text-center justify-center tracking-wider font-semibold">
- View prepration
+          View prepration
         </p>
         <a href={meal.strYoutube}>
           <img

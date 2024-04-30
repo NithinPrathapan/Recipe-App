@@ -8,7 +8,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   useEffect(() => {
     fetchById();
-  }, []);
+  }, [id]);
 
   const fetchById = async () => {
     try {
@@ -24,16 +24,16 @@ const ProductDetails = () => {
   return (
     <div>
       {item && (
-        <div className="md:flex-row flex-col flex sm:px-10 px-4 gap-12 justify-center ">
-          <div className="flex flex-col gap-6 ">
+        <div className="md:flex-row flex-col flex sm:px-10 px-4 gap-12 bg-slate-500 py-4 text-slate-200 justify-center items-center ">
+          <div className="flex flex-col gap-6 w-[90%] justify-center mx-auto ">
             <img
               className=" cursor-pointer rounded-xl sm:min-w-[300px]"
               src={item.strMealThumb}
               alt="meals"
             />
             <a
-              className="text-lg italic underline text-indigo-800 font-semibold"
-              href=""
+              className="text-lg italic underline text-blue-500 font-semibold"
+              href={item.strYoutube}
             >
               Click here to watch Video
             </a>

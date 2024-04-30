@@ -19,9 +19,9 @@ const Hero = () => {
     }
   };
   return (
-    <div className=" flex flex-col sm:flex-row justify-center gap-12 px-10 py-4 items-center ">
+    <div className=" flex flex-col bg-gradient-to-br from-cyan-50 to-cyan-200 sm:flex-row justify-center gap-12 px-10 py-12 items-center ">
       <div className="w-full">
-        <h1 className="font-semibold font-oswald   text-5xl sm:text-4xl md:text-6xl text-center tracking-wide">
+        <h1 className="font-semibold  font-oswald   text-5xl sm:text-4xl md:text-6xl text-center tracking-wide w-[90%] first-letter: mx-auto">
           Feast your eyes on this{" "}
           <span className="text-orange-500">delicious dinner spread</span>
         </h1>
@@ -29,7 +29,7 @@ const Hero = () => {
       <div className="w-full">
         {randomData && (
           <img
-            className="rounded-xl object-fill"
+            className="rounded-xl object-fill shadow-md"
             src={randomData.strMealThumb}
             alt="pic"
           />
