@@ -1,7 +1,7 @@
 import React from "react";
 import { FaOpencart } from "react-icons/fa";
-import { RiAccountCircleLine } from "react-icons/ri";
 import { IoSearch } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Nav = () => {
   return (
@@ -15,7 +15,7 @@ const Nav = () => {
       </div>
       <div className="routes border px-2 py-1 w-[60%] justify-between rounded-lg sm:flex hidden">
         <input
-          className="outline-none"
+          className="outline-none w-full"
           type="text"
           placeholder="Type Ingredients..."
         />
@@ -25,7 +25,7 @@ const Nav = () => {
       </div>
       <div className="cart-section  flex flex-row  sm:gap-4 gap-2 items-center">
         <FaOpencart size={28} />
-        <RiAccountCircleLine size={28} />
+        <GiHamburgerMenu size={28} />
       </div>
     </nav>
   );
