@@ -8,10 +8,12 @@ import {
 
 import ProductDetails from "./Pages/ProductDetails";
 import Home from "./Pages/Home";
+import Nav from "./Sections/Nav";
 
 const App = () => {
   return (
     <BrowserRouter>
+    <Nav/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productDetails/:id" element={<ProductDetails />} />

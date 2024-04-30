@@ -28,7 +28,11 @@ const Hero = () => {
       </div>
       <div className="w-full">
         {randomData && (
-          <img className="rounded-xl" src={randomData.strMealThumb} alt="pic" />
+          <img
+            className="rounded-xl object-fill"
+            src={randomData.strMealThumb}
+            alt="pic"
+          />
         )}
       </div>
     </div>

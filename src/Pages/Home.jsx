@@ -6,7 +6,6 @@ import ProductSection from "../Sections/ProductSection";
 const Home = () => {
   return (
     <div>
-      <Nav />
       <Hero />
       <ProductSection />
     </div>

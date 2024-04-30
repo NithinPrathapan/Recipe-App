@@ -14,13 +14,13 @@ const ProductCard = ({ meal }) => {
       <h1 className="text-lg mb uppercase font-bold font-oswald tracking-wide">
         {meal.strMeal}
       </h1>
-      <div className="flex justify-center items-center">
-        <p className="mb-2 flex text-center justify-center tracking-wider w-[60%]  font-semibold">
-          Click here to watch the cooking video
+      <div className="flex gap-2 justify-center items-center">
+        <p className="mb-2 flex text-center justify-center tracking-wider font-semibold">
+ View prepration
         </p>
         <a href={meal.strYoutube}>
           <img
-            className="object-contain cursor-pointer"
+            className="object-contain mb-2 cursor-pointer"
             src={youtube}
             alt="youtube"
             width={42}
