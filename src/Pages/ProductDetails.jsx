@@ -19,7 +19,6 @@ const ProductDetails = () => {
     } catch (error) {
       console.error(error);
     }
-    console.log(item, "the item uinsg id");
   };
   return (
     <div>

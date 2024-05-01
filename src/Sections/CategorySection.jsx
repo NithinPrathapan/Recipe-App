@@ -15,7 +15,6 @@ const CategorySection = () => {
         "https://themealdb.com/api/json/v1/1/list.php?i=list"
       );
       setlist(response.data.meals.slice(0, 10));
-      console.log(response.data.meals.slice(0, 10));
     } catch (error) {
       console.error(error);
     }
@@ -33,7 +32,7 @@ const CategorySection = () => {
               key={item.idIngredient}
               className="w-[300px] bg-gray-300 p-2 rounded-xl flex flex-col"
             >
-              <Link to={`/categoryDetails/${item.strCategory}`}>
+              <Link to={`/categoryDetails/${item.strIngredient}`}>
                 <img
                   className="cursor-pointer"
                   src={`https://themealdb.com/images/ingredients/${item.strIngredient}.png`}
