@@ -7,9 +7,10 @@ import axios from "axios";
 import ProductCard from "../components/ProductCard";
 
 const Nav = () => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(null);
   const [searchItems, setSearchitems] = useState(null);
   const [searchItembyname, setSearchItemByname] = useState(null);
+  const [flag, setFlag] = useState(false);
   useEffect(() => {
     const search = async (query) => {
       if (query.length == 1) {
@@ -21,18 +22,24 @@ const Nav = () => {
     };
     search(query);
   }, [query]);
-
+  console.log(flag);
   const handleChange = (e) => {
     setQuery(e.target.value);
+    setFlag(true);
     console.log(query);
   };
 
   const handleSearch = async (query) => {
-    const response = await axios.get(
-      `https://themealdb.com/api/json/v1/1/search.php?s=${query}`
-    );
-    setSearchItemByname(response.data.meals[0]);
-    console.log(searchItembyname);
+    setFlag(false);
+    try {
+      const response = await axios.get(
+        `https://themealdb.com/api/json/v1/1/search.php?s=${query}`
+      );
+      setSearchItemByname(response.data.meals[0]);
+      console.log(searchItembyname);
+    } catch (error) {
+      console.error(error);
+    }
   };
   return (
     <div>
@@ -40,8 +47,9 @@ const Nav = () => {
         <div className="logo relative">
           <div>
             <Link to={"/"}>
-              <h1 className="font-oswald font-semibold text-purple-900-500 text tracking-widest relative z-50  text-xl left-6">
-                Book a Meal
+              <h1 className="font-oswald text-2xl py-2 pl-2 rounded-l-lg font-bold     tracking-widest relative z-50 border border-yellow-500 left-6">
+                Gotta{" "}
+                <span className="bg-yellow-500 p-2  text-white ">Taste</span>
               </h1>
             </Link>
           </div>
@@ -82,16 +90,19 @@ const Nav = () => {
           </div>
         </div>
       )}
-      {searchItembyname && searchItembyname !== null && (
-        <div className="bg-gradient-to-br from-cyan-50 to-cyan-200 py-12">
-          <h1 className="text-center text-3xl m-4 uppercase font-bold ">
-            Search<span className="text-orange-500"> Results</span>
-          </h1>
-          <div className="flex flex-wrap gap-12 justify-center ">
-            <ProductCard meal={searchItembyname} />
+      {searchItembyname &&
+        searchItembyname !== null &&
+        query.length !== 0 &&
+        !flag && (
+          <div className="bg-gradient-to-br from-cyan-50 to-cyan-200 py-12">
+            <h1 className="text-center text-3xl m-4 uppercase font-bold ">
+              Search<span className="text-orange-500"> Results</span>
+            </h1>
+            <div className="flex flex-wrap gap-12 justify-center ">
+              <ProductCard meal={searchItembyname} />
+            </div>
           </div>
-        </div>
-      )}
+        )}
     </div>
   );
 };
