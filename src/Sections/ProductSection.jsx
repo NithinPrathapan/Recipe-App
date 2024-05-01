@@ -12,7 +12,6 @@ const ProductSection = () => {
           "https://www.themealdb.com/api/json/v1/1/search.php?s="
         );
         setMeals(response.data.meals);
-        console.log(response.data.meals);
       } catch (error) {
         console.error(error);
       }
@@ -21,11 +20,11 @@ const ProductSection = () => {
   }, [0]);
 
   return (
-    <div className="py-10 w-screen">
+    <div className="py-10 ">
       <h1 className="text-center text-3xl m-4 uppercase font-bold ">
-        Our Popu<span className="text-orange-500">lar meals</span>
+        Popular<span className="text-orange-500"> meals</span>
       </h1>
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="flex flex-wrap gap-12 justify-center">
         {meals &&
           meals
             .slice(0, 10)

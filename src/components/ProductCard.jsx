@@ -3,7 +3,7 @@ import youtube from "../assets/youtube.png";
 import { Link } from "react-router-dom";
 const ProductCard = ({ meal }) => {
   return (
-    <div className="max-w-[300px]  gap-2 bg-slate-800 rounded-xl flex text-white flex-col justify-center items-center ">
+    <div className="max-w-[200px]  gap-2 bg-slate-800 rounded-xl flex text-white flex-col justify-center items-center ">
       <Link to={`/productDetails/${meal.idMeal}`}>
         <img
           className=" cursor-pointer rounded-xl"

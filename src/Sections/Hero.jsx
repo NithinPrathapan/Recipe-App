@@ -19,7 +19,7 @@ const Hero = () => {
     }
   };
   return (
-    <div className=" flex flex-col bg-gradient-to-br from-cyan-50 to-cyan-200 sm:flex-row justify-center gap-12 px-10 py-12 items-center ">
+    <div className=" flex flex-col  bg-gradient-to-br from-cyan-50 to-cyan-200 sm:flex-row justify-center gap-12 px-10 py-12 items-center ">
       <div className="w-full">
         <h1 className="font-semibold  font-oswald   text-5xl sm:text-4xl md:text-6xl text-center tracking-wide w-[90%] first-letter: mx-auto">
           Feast your eyes on this{" "}

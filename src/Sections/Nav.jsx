@@ -42,14 +42,14 @@ const Nav = () => {
     }
   };
   return (
-    <div>
+    <div className="">
       <nav className="flex px-4 py-6 justify-between m-0 items-center">
         <div className="logo relative">
           <div>
             <Link to={"/"}>
-              <h1 className="font-oswald text-2xl py-2 pl-2 rounded-l-lg font-bold     tracking-widest relative z-50 border border-yellow-500 left-6">
+              <h1 className="font-oswald text-2xl py-[10px] pl-2 rounded-l-lg font-bold     tracking-widest relative z-50 border-2 border-yellow-500 left-6">
                 Gotta{" "}
-                <span className="bg-yellow-500 p-2  text-white ">Taste</span>
+                <span className="bg-yellow-500 py-2 text-white ">Taste</span>
               </h1>
             </Link>
           </div>
