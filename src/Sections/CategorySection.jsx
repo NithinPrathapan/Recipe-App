@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const CategorySection = () => {
   const [list, setlist] = useState(null);
@@ -11,10 +12,10 @@ const CategorySection = () => {
   const fetchRandomImage = async () => {
     try {
       const response = await axios.get(
-        "https://themealdb.com/api/json/v1/1/categories.php"
+        "https://themealdb.com/api/json/v1/1/list.php?i=list"
       );
-      setlist(response.data.categories);
-      console.log(response.data.categories);
+      setlist(response.data.meals.slice(0, 10));
+      console.log(response.data.meals.slice(0, 10));
     } catch (error) {
       console.error(error);
     }
@@ -27,17 +28,23 @@ const CategorySection = () => {
       </h1>
       <div className="flex flex-wrap justify-center gap-12">
         {list &&
-          list.map((item) => (
+          list.slice(0, 10).map((item) => (
             <div
-              key={item.idCategory}
+              key={item.idIngredient}
               className="w-[300px] bg-gray-300 p-2 rounded-xl flex flex-col"
             >
-              <img className="cursor-pointer" src={item.strCategoryThumb} alt="category" />
+              <Link to={`/categoryDetails/${item.strCategory}`}>
+                <img
+                  className="cursor-pointer"
+                  src={`https://themealdb.com/images/ingredients/${item.strIngredient}.png`}
+                  alt="category"
+                />
+              </Link>
               <h1 className="text-lg font-oswald text-center py-1 ">
-                {item.strCategory}
+                {item.strIngredient}
               </h1>
               <p className="line-clamp-4 text-sm text-teal-800">
-                {item.strCategoryDescription}
+                {item.strDescription}
               </p>
             </div>
           ))}

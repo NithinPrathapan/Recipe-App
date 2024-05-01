@@ -7,13 +7,13 @@ import axios from "axios";
 import ProductCard from "../components/ProductCard";
 
 const Nav = () => {
-  const [query, setQuery] = useState(null);
+  const [query, setQuery] = useState("");
   const [searchItems, setSearchitems] = useState(null);
   const [searchItembyname, setSearchItemByname] = useState(null);
   const [flag, setFlag] = useState(false);
   useEffect(() => {
     const search = async (query) => {
-      if (query.length == 1) {
+      if (query.length === 1) {
         const response = await axios.get(
           `https://themealdb.com/api/json/v1/1/search.php?f=${query}`
         );
