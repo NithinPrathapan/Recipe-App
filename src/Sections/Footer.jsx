@@ -6,8 +6,8 @@ import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-slate-900 bottom-0 p-4 text-slate-200 px-12">
-      <div className="flex w-full flex-col ">
+    <footer className="w-full bg-slate-900 py-20 p-4 text-slate-200 px-12">
+      <div className="flex w-full sm:flex-row flex-col ">
         <div className="flex w-full flex-1 justify-center flex-col">
           <Link to={"/"}>
             <h1 className="text-2xl">
@@ -21,8 +21,10 @@ const Footer = () => {
             illum non!
           </p>
         </div>
-        <div className="flex  flex-col py-10 ">
-          <h1 className="mb-6 text-xl font-semibold">Social NetWork</h1>
+        <div className="flex  flex-col py-10 justify-center items-center ">
+          <h1 className="mb-6 text-xl font-semibold">
+            Connect with us through
+          </h1>
           <div className="flex gap-6">
             <FaFacebook size={28} className="cursor-pointer" />
             <FaInstagramSquare size={28} className="cursor-pointer" />
