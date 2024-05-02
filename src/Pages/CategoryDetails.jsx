@@ -15,7 +15,6 @@ const CategoryDetails = () => {
         `https://themealdb.com/api/json/v1/1/filter.php?i=${category}`
       );
       setItem(response.data.meals);
-      console.log(response.data.meals);
     } catch (error) {
       console.error(error);
     }
@@ -24,7 +23,8 @@ const CategoryDetails = () => {
     <div>
       <div></div>
       <h1 className="text-center text-3xl m-4 uppercase font-bold ">
-        Meals with {category} <span className="text-orange-500">as Ingredient</span>
+        Meals with {category}{" "}
+        <span className="text-orange-500">as Ingredient</span>
       </h1>
       <div className="flex gap-12 flex-wrap justify-center mx-auto my-4">
         {item &&

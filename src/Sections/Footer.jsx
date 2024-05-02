@@ -6,7 +6,7 @@ import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-slate-900 py-20 p-4 text-slate-200 px-12">
+    <footer className="w-full  bg-slate-900 py-20 p-4 text-slate-200 px-12">
       <div className="flex w-full sm:flex-row flex-col ">
         <div className="flex w-full flex-1 justify-center flex-col">
           <Link to={"/"}>

@@ -47,18 +47,17 @@ const Nav = () => {
         <div className="logo relative">
           <div>
             <Link to={"/"}>
-              <h1 className="font-oswald text-2xl py-[10px] pl-2 rounded-l-lg font-bold     tracking-widest relative z-50 border-2 border-yellow-500 left-6">
-                Gotta{" "}
-                <span className="bg-yellow-500 py-2 pl-2 text-white ">Taste</span>
+              <h1 className="font-oswald text-xl px-2 py-[4px]   rounded-l-lg font-bold     tracking-widest relative z-50 border-2 hover:border-teal-500 duration-200 border-yellow-500 left-6">
+                Gotta <span className="py-2 text-orange-500  ">Taste</span>
               </h1>
             </Link>
           </div>
         </div>
-        <div className="routes border py-2 shadow-lg px-2 w-[50%] justify-between rounded-lg sm:flex hidden">
+        <div className="routes   shadow-md  w-[50%] justify-between rounded-lg sm:flex hidden">
           <input
             onChange={handleChange}
             value={query}
-            className="outline-none w-full text-xl"
+            className="outline-none w-full text-xl rounded-xl px-2"
             type="text"
             placeholder="Type Ingredients..."
           />

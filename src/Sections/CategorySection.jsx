@@ -6,10 +6,10 @@ const CategorySection = () => {
   const [list, setlist] = useState(null);
 
   useEffect(() => {
-    fetchRandomImage();
+    fetchByCategory();
   }, [0]);
 
-  const fetchRandomImage = async () => {
+  const fetchByCategory = async () => {
     try {
       const response = await axios.get(
         "https://themealdb.com/api/json/v1/1/list.php?i=list"
