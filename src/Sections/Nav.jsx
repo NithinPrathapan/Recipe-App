@@ -11,6 +11,7 @@ const Nav = () => {
   const [searchItems, setSearchitems] = useState(null);
   const [searchItembyname, setSearchItemByname] = useState(null);
   const [flag, setFlag] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
   useEffect(() => {
     const search = async (query) => {
       if (query.length === 1) {
@@ -42,7 +43,7 @@ const Nav = () => {
     }
   };
   return (
-    <div className="">
+    <section className="">
       <nav className="flex px-4 py-6 justify-between m-0 items-center">
         <div className="logo relative">
           <div>
@@ -73,8 +74,14 @@ const Nav = () => {
           </div>
         </div>
         <div className="cart-section  flex flex-row  sm:gap-4 gap-2 items-center">
-          <FaOpencart size={28} />
-          <GiHamburgerMenu size={28} />
+          <FaOpencart size={36} />
+          <GiHamburgerMenu
+            className="cursor-pointer"
+            onClick={() => {
+              setDropdown(true);
+            }}
+            size={36}
+          />
         </div>
       </nav>
       {searchItems && searchItems !== null && query.length === 1 && (
@@ -102,7 +109,7 @@ const Nav = () => {
             </div>
           </div>
         )}
-    </div>
+    </section>
   );
 };
 
